@@ -1,7 +1,7 @@
 import re
 import torch
 
-def Tokenizer(user_input, model_output, pad_token="<PAD>", unk_token="<UNK>", start_token="<SOS>", end_token="<EOS>"):
+def tokenizer(user_input, model_output, pad_token="<PAD>", unk_token="<UNK>", start_token="<SOS>", end_token="<EOS>"):
     user_input_sentences = [re.sub(r'[^\w\s]', r' \g<0> ', sentence.lower()) for sentence in user_input]
     model_output_sentences = [re.sub(r'[^\w\s]', r' \g<0> ', sentence.lower()) for sentence in model_output]
     words = ' '.join(user_input_sentences + model_output_sentences).split()
