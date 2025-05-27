@@ -1,4 +1,4 @@
-from generate import generate, chat
+from generate import chat
 
 # The data must be the same as the one used during training
 data = {
