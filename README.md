@@ -1,5 +1,5 @@
 # Transformer-From-Scratch
-Transformer has become the game-changing architecture in natural language processing and even other fields. This project is the implementation of Transformer from scratch in PyTorch based on the paper [Attention Is All You Need](https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf).
+Transformer has become the game-changing architecture in natural language processing and even other fields. This project is the implementation of Transformer from scratch in PyTorch, based on the paper [Attention Is All You Need](https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf).
 
 # Overview
 You only need run_train.py and run_chatbot.py to get started after download all .py files and required libraries.
