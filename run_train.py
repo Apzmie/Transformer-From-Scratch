@@ -6,7 +6,7 @@ data = {
         "What is the weather like today?",
     ],
     'model_output': [
-        "My name is chatbot, nice to meet you",
+        "My name is chatbot, nice to meet you.",
         "It looks like sunny.",
     ]
 }
