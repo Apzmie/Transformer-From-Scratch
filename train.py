@@ -1,4 +1,4 @@
-from tokenizer import Tokenizer
+from tokenizer import tokenizer
 from transformer import Transformer
 import pandas as pd
 import torch
@@ -9,7 +9,7 @@ def train(data, d_model, num_heads, num_layers, train_num_epochs, train_save_per
     df = pd.DataFrame(data)
     user_input = df['user_input'].tolist()
     model_output = df['model_output'].tolist()
-    enc_input_tensor, dec_input_tensor, dec_target_tensor, vocab_size, enc_max_len, dec_max_len, vocab = Tokenizer(user_input, model_output)
+    enc_input_tensor, dec_input_tensor, dec_target_tensor, vocab_size, enc_max_len, dec_max_len, vocab = tokenizer(user_input, model_output)
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     enc_input_tensor = enc_input_tensor.to(device)
