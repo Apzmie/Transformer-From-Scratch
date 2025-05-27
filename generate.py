@@ -1,4 +1,4 @@
-from tokenizer import Tokenizer
+from tokenizer import tokenizer
 from transformer import Transformer
 import re
 import pandas as pd
@@ -9,7 +9,7 @@ def generate(data, eval_input, d_model, num_heads, num_layers, max=None):
     df = pd.DataFrame(data)
     user_input = df['user_input'].tolist()
     model_output = df['model_output'].tolist()
-    _, _, _, vocab_size, enc_max_len, dec_max_len, vocab = Tokenizer(user_input, model_output)
+    _, _, _, vocab_size, enc_max_len, dec_max_len, vocab = tokenizer(user_input, model_output)
     model = Transformer(d_model, num_heads, num_layers, vocab_size, enc_max_len, dec_max_len)
     model.load_state_dict(torch.load('chatbot.pth'))
     model.to(device)
