@@ -3,12 +3,12 @@ Transformer has become the game-changing architecture in natural language proces
 
 # Overview
 You only need run_train.py and run_chatbot.py to get started after download all .py files and required libraries.
-- tokenizer.py - preprocessing of texts to be inputs
-- transformer.py - the main transformer architecture
+- tokenizer.py - preprocessing of texts to be inputs and targets
+- transformer.py - the main architecture including MultiHeadAttention, AddandNorm, FeedForward, EncoderLayer, DecoderLayer, Transformer (+ positional encoding)
 - train.py - training loop and saving the model
 - generate.py - generation of texts from the model
 - run_train.py - data preparation and start of training
-- run_chatbot.py - chat with the model
+- run_chatbot.py - chat with the model in the terminal
 
 # run_train.py
 ```python
