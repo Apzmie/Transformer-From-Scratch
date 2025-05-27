@@ -44,7 +44,7 @@ Model saved at epoch 150 with the best loss: 0.0032
 
 # run_chatbot.py
 ```python
-from generate import generate, chat
+from generate import chat
 
 # The data must be the same as the one used during training
 data = {
