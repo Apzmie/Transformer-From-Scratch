@@ -126,15 +126,15 @@ class Transformer(nn.Module):
     def __init__(self, d_model, num_heads, num_layers, vocab_size, enc_max_len, dec_max_len):
         super().__init__()
         self.embedding = nn.Embedding(vocab_size, d_model)
-        pe_enc = self.PositionalEncoding(enc_max_len, d_model)
-        pe_dec = self.PositionalEncoding(dec_max_len, d_model)
+        pe_enc = self.positional_encoding(enc_max_len, d_model)
+        pe_dec = self.positional_encoding(dec_max_len, d_model)
         self.register_buffer("pe_enc", pe_enc)
         self.register_buffer("pe_dec", pe_dec)
         self.encoder = nn.ModuleList([EncoderLayer(d_model, num_heads) for _ in range(num_layers)])
         self.decoder = nn.ModuleList([DecoderLayer(d_model, num_heads) for _ in range(num_layers)])
         self.linear = nn.Linear(d_model, vocab_size)
 
-    def PositionalEncoding(self, max_len, d_model):
+    def positional_encoding(self, max_len, d_model):
         pe = torch.zeros(max_len, d_model)
         pos = torch.arange(0, max_len, dtype=torch.float).unsqueeze(1)
         exp_scale = torch.exp(torch.arange(0, d_model, 2).float() * (-math.log(10000.0) / d_model))
